@@ -1,24 +1,20 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using API.data;
 using API.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 namespace API.Controllers
 {
-    [Route("api/[controller]")]
-    public class MembersController(AppDbContext context) : ControllerBase
+   
+    public class MembersController(AppDbContext context) : BaseApiController
     {
       [HttpGet]
-      public async Task< ActionResult<List<AppUser>>> GetAllMembers()
+      public async Task< ActionResult<List<AppUser>>> GetMembers()
         {
             var Member =  await context.Users.ToListAsync();
             return Member;
         }
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<AppUser>> GetMember(string id)
         {
