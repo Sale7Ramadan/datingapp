@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CloudinaryDotNet" Version="1.29.3" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.21" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.20" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.20" />
@@ -22,6 +23,7 @@
     <Folder Include="Entities\" />
     <Folder Include="Errors\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Helpers\" />
     <Folder Include="Interfaces\" />
     <Folder Include="MiddleWare\" />
     <Folder Include="Services\" />
